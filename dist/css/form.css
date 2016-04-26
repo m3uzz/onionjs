@@ -1,0 +1,181 @@
+/**
+ * This file is part of Onion
+ *
+ * Copyright (c) 2014-2016, Humberto Lourenço <betto@m3uzz.com>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Humberto Lourenço nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @category   CSS
+ * @package    Onion
+ * @author     Humberto Lourenço <betto@m3uzz.com>
+ * @copyright  2014-2016 Humberto Lourenço <betto@m3uzz.com>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/m3uzz/onionfw
+ */
+ 
+.form-group, .input-form {
+	margin: 20px 0;
+}
+
+#login label {
+	color: #999;	
+}
+
+#login .input-group {
+	margin: 0 0 10px 0 !important;
+}
+
+#login .panel-body hr {
+	margin: 5px 0 10px 0;
+}
+
+input:hover:after + .hintHelp,
+textarea:hover:after + .hintHelp,
+select:hover:after + .hintHelp {
+  content: attr(title);
+  padding: 4px 8px;
+  color: #888;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  white-space: wrap;
+  z-index: 20px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 0px 0px 4px #222;
+  -webkit-box-shadow: 0px 0px 4px #222;
+  box-shadow: 0px 0px 4px #222;
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #dfdf),color-stop(1, #efefdf));
+  background-image: -webkit-linear-gradient(top, #dfdf, #efefdf);
+  background-image: -moz-linear-gradient(top, #dfdf, #efefdf);
+  background-image: -ms-linear-gradient(top, #dfdf, #efefdf);
+  background-image: -o-linear-gradient(top, #dfdf, #efefdf);
+}
+
+#login .form-control {
+	width: 100% !important;	
+}
+
+.form-control {
+  -moz-border-radius: 3px !important;
+  -webkit-border-radius: 3px !important;
+  border-radius: 3px !important;
+}
+
+.input-group ul, .input-form ul {
+  list-style: none;
+  max-width: 400px;
+  min-width: 250px;
+  padding: 4px 8px;
+  color: #b03535;
+  position: absolute;
+  left: 3%;
+  top: 100%;
+  white-space: wrap;
+  z-index: 20px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 0px 0px 4px #222;
+  -webkit-box-shadow: 0px 0px 4px #222;
+  box-shadow: 0px 0px 4px #222;
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #fff),color-stop(1, #efefdf));
+  background-image: -webkit-linear-gradient(top, #fff, #efefdf);
+  background-image: -moz-linear-gradient(top, #fff, #efefdf);
+  background-image: -ms-linear-gradient(top, #fff, #efefdf);
+  background-image: -o-linear-gradient(top, #fff, #efefdf);
+}
+
+#login .input-group ul, #login .input-form ul {
+	display:none;
+}
+
+.requiredMark{
+    position: absolute;
+    font: bold normal 1em sans-serif;
+    left: 97%;
+    top: 60%;
+    border:none !important;
+    box-shadow:none !important;
+}
+
+.input-group .requiredMark{
+    left: 100%;
+    top: 30%;
+}
+
+#login .requiredMark{
+    left: 96%;
+    top:60%;
+}
+
+input:required + .requiredMark::after, 
+textarea:required + .requiredMark::after, 
+select:required + .requiredMark::after {
+    content: "*";
+    color: #b03535;
+}
+
+input:focus:invalid, 
+textarea:focus:invalid, 
+select:focus:invalid {
+    box-shadow: 0 0 5px #d45252;
+    border-color: #b03535;
+}
+
+input:required:valid,
+textarea:required:valid, 
+select:required:valid {
+	box-shadow: 0 0 5px #5cd053;
+    border-color: #28921f;
+}
+
+input:focus:invalid + .requiredMark::after, 
+textarea:focus:invalid + .requiredMark::after, 
+select:focus:invalid + .requiredMark::after {
+	content: "!";
+    color: #b03535;
+}
+
+input:required:valid + .requiredMark::after, 
+textarea:required:valid + .requiredMark::after, 
+select:required:valid + .requiredMark::after {
+	content: "✓";
+    color: #28921f;
+}
+
+.input-form > .btn-group > label.active {
+	background-color:#419641;
+	color:#fff;
+	text-shadow:none;
+	
+}
