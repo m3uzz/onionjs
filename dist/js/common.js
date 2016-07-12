@@ -70,8 +70,15 @@ $.fn.checkValidate = function() {
 		
 		for (key in form)
 		{
-			$(this).debug(form[key].name);
-			element = $('#' + form[key].name);
+			fieldName = form[key].name;
+
+			if (fieldName.indexOf("[]") != -1)
+			{
+				fieldName = fieldName.slice(0,-2);
+			}
+			
+			$(this).debug(fieldName);
+			element = $('#' + fieldName);
 			
 			if (typeof element == 'object' && element.attr('required'))
 			{
@@ -309,12 +316,40 @@ $.fn.notificationEvent = function() {
 	return ms;
 }
 
-$(document).ready(function() {		
-	$(this).notificationEvent();
+$(document).ready(function() {
+	var managerPush = null;
+	
+	$(window).focus(function(){
+		$(this).debug('focus');
+		
+		if($('#push').length)
+		{
+			$(this).debug('start push');
+			managerPush = $(this).notificationEvent();
+		}
+	});
+	
+	$(window).blur(function(){
+		$(this).debug('blur');
+		
+		if($('#push').length)
+		{
+			$(this).debug('stop push');
+			managerPush.close();
+			managerPush = null;
+		}
+	});
 	
 	$("#push").unbind('click').bind('click', function(){
 		$('#pushMessage blockquote').removeClass('hidden');
 		$('#pushMessage').toggle();
+	});
+	
+	$('input:not(:password)').change(function() {
+		if ($(this).attr('toUpper') != 'false' && !$(this).hasClass('noUpper'))
+	    {
+			$(this).val($(this).val().toUpperCase());
+	    }
 	});
 	
 	$(".openPopUpBtn").unbind('click').bind('click', function() {

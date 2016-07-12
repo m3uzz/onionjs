@@ -133,18 +133,7 @@ $(document).ready(function() {
 		}
 	});
 	
-	$("input[type=submit]").unbind('click').bind('click', function() {
-		if ($('form').attr('novalidate') != 'novalidate')
-		{
-			$(this).addClass('disabled');
-			
-			if (!$('form').checkValidate()) {
-				$(this).removeClass('disabled');
-			}
-		}
-	});
-	
-	$("button[type=submit]").unbind('click').bind('click', function() {
+	$("input[type=submit], button[type=submit]").unbind('click').bind('click', function() {
 		if ($('form').attr('novalidate') != 'novalidate')
 		{
 			$(this).addClass('disabled');
