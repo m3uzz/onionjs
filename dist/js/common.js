@@ -346,7 +346,7 @@ $(document).ready(function() {
 	});
 	
 	$('input:not(:password)').change(function() {
-		if ($(this).attr('toUpper') != 'false' && !$(this).hasClass('noUpper'))
+		if ($(this).attr('data-toUpper') != 'false' && !$(this).hasClass('noUpper'))
 	    {
 			$(this).val($(this).val().toUpperCase());
 	    }
