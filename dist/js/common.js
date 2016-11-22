@@ -335,7 +335,12 @@ $(document).ready(function() {
 		if($('#push').length)
 		{
 			$(this).debug('stop push');
-			managerPush.close();
+			
+			if (managerPush != null)
+			{
+				managerPush.close();
+			}
+
 			managerPush = null;
 		}
 	});

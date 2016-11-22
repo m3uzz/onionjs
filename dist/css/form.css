@@ -57,28 +57,12 @@
 	margin: 5px 0 10px 0;
 }
 
-input:hover:after + .hintHelp,
-textarea:hover:after + .hintHelp,
-select:hover:after + .hintHelp {
-  content: attr(title);
-  padding: 4px 8px;
-  color: #888;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  white-space: wrap;
-  z-index: 20px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  -moz-box-shadow: 0px 0px 4px #222;
-  -webkit-box-shadow: 0px 0px 4px #222;
-  box-shadow: 0px 0px 4px #222;
-  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #dfdf),color-stop(1, #efefdf));
-  background-image: -webkit-linear-gradient(top, #dfdf, #efefdf);
-  background-image: -moz-linear-gradient(top, #dfdf, #efefdf);
-  background-image: -ms-linear-gradient(top, #dfdf, #efefdf);
-  background-image: -o-linear-gradient(top, #dfdf, #efefdf);
+.form-help {
+	cursor: help;
+}
+
+.form-msg {
+	cursor: pointer;
 }
 
 #login .form-control {
@@ -91,28 +75,9 @@ select:hover:after + .hintHelp {
   border-radius: 3px !important;
 }
 
-.input-group ul, .input-form ul {
-  list-style: none;
-  max-width: 400px;
-  min-width: 250px;
-  padding: 4px 8px;
+.input-group ul.input-message, .input-form ul.input-message {
+  padding: 0px 10px;
   color: #b03535;
-  position: absolute;
-  left: 3%;
-  top: 100%;
-  white-space: wrap;
-  z-index: 20px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  -moz-box-shadow: 0px 0px 4px #222;
-  -webkit-box-shadow: 0px 0px 4px #222;
-  box-shadow: 0px 0px 4px #222;
-  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #fff),color-stop(1, #efefdf));
-  background-image: -webkit-linear-gradient(top, #fff, #efefdf);
-  background-image: -moz-linear-gradient(top, #fff, #efefdf);
-  background-image: -ms-linear-gradient(top, #fff, #efefdf);
-  background-image: -o-linear-gradient(top, #fff, #efefdf);
 }
 
 #login .input-group ul, #login .input-form ul {
@@ -136,13 +101,6 @@ select:hover:after + .hintHelp {
 #login .requiredMark{
     left: 96%;
     top:60%;
-}
-
-input:required + .requiredMark::after, 
-textarea:required + .requiredMark::after, 
-select:required + .requiredMark::after {
-    content: "*";
-    color: #b03535;
 }
 
 input:focus:invalid, 

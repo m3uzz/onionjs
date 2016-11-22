@@ -42,6 +42,9 @@
  */
 
 $(document).ready(function() {
+	$('[data-toggle="popover"]').popover();
+	$('[data-toggle="tooltip"]').tooltip()
+		
 	$("#generatePasswordBtn").unbind('click').bind('click', function() {
 		
 		$.ajaxSetup({async:true});
@@ -136,10 +139,10 @@ $(document).ready(function() {
 	$("input[type=submit], button[type=submit]").unbind('click').bind('click', function() {
 		if ($('form').attr('novalidate') != 'novalidate')
 		{
-			$(this).addClass('disabled');
+			$(this).button('loading');
 			
 			if (!$('form').checkValidate()) {
-				$(this).removeClass('disabled');
+				$(this).button('reset');
 			}
 		}
 	});
